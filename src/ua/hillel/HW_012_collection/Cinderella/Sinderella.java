@@ -3,7 +3,11 @@ package ua.hillel.HW_012_collection.Cinderella;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SinderellaMethods {
+public class Sinderella {
+    public static void main(String[] args) {
+        Sinderella sinderellaMethods = new Sinderella();
+        sinderellaMethods.divideList(sinderellaMethods.FillList());
+    }
     ArrayList<Integer> list = new ArrayList();
     ArrayList<Integer> divide2 = new ArrayList<>();
     ArrayList<Integer> divide3 = new ArrayList<>();

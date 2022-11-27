@@ -2,7 +2,11 @@ package ua.hillel.HW_012_collection.DistinctCollection;
 
 import java.util.*;
 
-public class CollectionMethods {
+public class DistinctCollection {
+    public static void main(String[] args) {
+        DistinctCollection collectionMethods = new DistinctCollection();
+        collectionMethods.DeleteRepeatElements(collectionMethods.FillList());
+    }
     ArrayList<Integer> list = new ArrayList();
 
     public ArrayList<Integer> FillList() {
@@ -10,6 +14,7 @@ public class CollectionMethods {
         for (int i = 0; i < 100; i++) {
             list.add(random.nextInt(50));
         }
+        System.out.println("Filled collection " + list);
         return list;
     }
 

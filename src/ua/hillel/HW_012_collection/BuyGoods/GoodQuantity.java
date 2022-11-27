@@ -4,7 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class CollectionMtethods {
+public class GoodQuantity {
+    public static void main(String[] args) {
+        GoodQuantity collectionMtethods = new GoodQuantity();
+        collectionMtethods.fillGoods();
+        collectionMtethods.summQuntityGoods();
+    }
     Map<Integer, String> goods = new HashMap<>();
 
     public void fillGoods() {
