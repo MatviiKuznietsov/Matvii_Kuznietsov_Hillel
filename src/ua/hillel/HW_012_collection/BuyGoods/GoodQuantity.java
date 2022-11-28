@@ -10,7 +10,7 @@ public class GoodQuantity {
         collectionMtethods.fillGoods();
         collectionMtethods.summQuntityGoods();
     }
-    Map<Integer, String> goods = new HashMap<>();
+    Map<String, Integer> goods = new HashMap<>();
 
     public void fillGoods() {
         String answer = "Y";
@@ -19,7 +19,7 @@ public class GoodQuantity {
             String name = new Scanner(System.in).next();
             System.out.println("Input quantity of goods");
             int key = new Scanner(System.in).nextInt();
-            this.goods.put(key, name);
+            this.goods.put(name, key);
             System.out.println("Would you like to add something else Y/N");
             answer = new Scanner(System.in).next();
         }
@@ -27,7 +27,7 @@ public class GoodQuantity {
 
     public void summQuntityGoods() {
         int summ =0;
-        for (int i : goods.keySet()) {
+        for (int i : goods.values()) {
             summ=summ+i;
         }
         System.out.println("Quantity of goods = " + summ);
