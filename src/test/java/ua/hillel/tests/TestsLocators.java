@@ -41,7 +41,7 @@ public class TestsLocators {
         driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
         driver.findElement(By.cssSelector(".radius")).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Assert.assertEquals("You logged into a secure area!\n" + "×", driver.findElement(By.xpath("//div[@class='flash success']")).getText());
+        Assert.assertEquals(driver.findElement(By.xpath("//div[@class='flash success']")).getText(), "You logged into a secure area!\n" + "×");
     }
 
     @Test
@@ -50,22 +50,18 @@ public class TestsLocators {
         driver.findElement(By.id("username")).sendKeys("NoNameUser");
         driver.findElement(By.id("password")).sendKeys("SMB_Password");
         driver.findElement(By.cssSelector(".radius")).click();
-        Assert.assertEquals("Your username is invalid!\n" + "×", driver.findElement(By.cssSelector(".flash.error")).getText());
+        Assert.assertEquals(driver.findElement(By.cssSelector(".flash.error")).getText(), "Your username is invalid!\n" + "×");
     }
 
     @Test
     public void testCheckbox() {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
-        List<String> checkboxStatus = new ArrayList();
         for (int i = 1; i <= 2; i++) {
-            checkboxStatus.add(driver.findElement(By.xpath("//input[" + i + "]")).getAttribute("checked"));
-        }
-        for (String i : checkboxStatus) {
-            int x = checkboxStatus.indexOf(i) + 1;
-            if (i == null) {
-                System.out.println("Checkbox " + x + " = OFF");
-            } else
-                System.out.println("Checkbox " + x + " = ON");
+            if (driver.findElement(By.xpath("//input[" + i + "]")).isSelected()) {
+                System.out.println("Checkbox " + i + " = OFF");
+            } else {
+                System.out.println("Checkbox " + i + " = ON");
+            }
         }
     }
 
