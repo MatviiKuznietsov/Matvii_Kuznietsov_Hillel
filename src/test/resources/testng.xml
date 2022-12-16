@@ -2,9 +2,8 @@
 
 <suite name="Suite1" verbose="1">
     <test name="test 1">
-        <parameter name="param" value="Hello i`m param"></parameter>
-        <packages>
-            <package name="ua.hillel.tests"></package>
-        </packages>
+        <classes>
+            <class name="ua.hillel.tests.TestsLocators"></class>
+        </classes>
     </test>
 </suite> 
