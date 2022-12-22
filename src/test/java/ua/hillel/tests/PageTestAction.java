@@ -34,8 +34,6 @@ public class PageTestAction extends BaseTest {
         WebElement dropDown = driver.findElement(By.cssSelector(".dropdown-toggle"));
         WebElement secondaryMenu = driver.findElement(By.xpath(".//*[text()='Secondary Menu ']"));
         WebElement secondaryAction = driver.findElement(By.xpath(".//*[text()='Secondary Action']"));
-        // Select select = new Select(dropDown);
-        // select.selectByVisibleText("Another action");
         Actions actions = new Actions(driver);
         actions.moveToElement(dropDown)
                 .pause(1000)
