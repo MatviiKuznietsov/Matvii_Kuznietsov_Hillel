@@ -6,20 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
-public class TestsLocators {
-    WebDriver driver = new ChromeDriver();
+public class TestsLocators extends BaseTest{
 
     @Test
     public void testClickButton() {
@@ -65,15 +60,6 @@ public class TestsLocators {
         }
     }
 
-    @BeforeTest
-    public void Preparation() {
-        WebDriverManager.chromedriver().setup();
 
-    }
-
-    @AfterTest
-    public void endWork() {
-        driver.close();
-    }
 }
 
