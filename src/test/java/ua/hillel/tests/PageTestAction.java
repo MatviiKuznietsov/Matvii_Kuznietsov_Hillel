@@ -52,7 +52,21 @@ public class PageTestAction extends BaseTest {
                 .moveToElement(picture3)
                 .pause(1000)
                 .perform();
+    }
 
-
+    @Test
+    public void userName2() {
+        driver.get("https://the-internet.herokuapp.com/hovers");
+        List<String> userName = new ArrayList<>();
+        Actions actions = new Actions(driver);
+        for (int i = 1; i <= 3; i++) {
+            actions.moveToElement(driver.findElement(By.cssSelector("div.figure:nth-of-type(" + i + ")"))).pause(1000).perform();
+            userName.add(String.valueOf(driver.findElement(By.xpath("(//h5)[" + i + "]")).getText()));
+        }
+        System.out.println("User names are " + userName);
     }
 }
+
+
+
+
