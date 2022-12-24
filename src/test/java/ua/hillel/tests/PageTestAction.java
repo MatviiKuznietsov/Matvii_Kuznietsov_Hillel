@@ -1,13 +1,12 @@
 package ua.hillel.tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PageTestAction extends BaseTest {
@@ -18,9 +17,8 @@ public class PageTestAction extends BaseTest {
         WebElement enterFrame = driver.findElement(By.xpath("//*[@id='droppable']"));
         Actions action = new Actions(driver);
         action.pause(2000).dragAndDrop(dragFrame, enterFrame).pause(2000).perform();
+        Assert.assertEquals(driver.findElement(By.xpath(".//p[contains(text(),'Dropped')]")).getText(), "Dropped!");
     }
-
-
     @Test
     public void dropDownMenu() {
         driver.get("https://crossbrowsertesting.github.io/hover-menu.html");
@@ -36,36 +34,21 @@ public class PageTestAction extends BaseTest {
                 .perform();
         Assert.assertEquals(driver.findElement(By.xpath(".//*[text()='Secondary Page']")).getText(), "Secondary Page");
     }
-
-
     @Test
-    public void userName() {
+    public void userNames() {
+        WebDriverManager.chromedriver().setup();
         driver.get("https://the-internet.herokuapp.com/hovers");
-        WebElement picture1 = driver.findElement(By.cssSelector("div.figure:nth-of-type(1)"));
-        WebElement picture2 = driver.findElement(By.cssSelector("div.figure:nth-of-type(2)"));
-        WebElement picture3 = driver.findElement(By.cssSelector("div.figure:nth-of-type(3)"));
+        List<WebElement> figures = driver.findElements(By.cssSelector("div.figure"));
         Actions actions = new Actions(driver);
-        actions.moveToElement(picture1)
-                .pause(1000)
-                .moveToElement(picture2)
-                .pause(1000)
-                .moveToElement(picture3)
-                .pause(1000)
-                .perform();
-    }
-
-    @Test
-    public void userName2() {
-        driver.get("https://the-internet.herokuapp.com/hovers");
-        List<String> userName = new ArrayList<>();
-        Actions actions = new Actions(driver);
-        for (int i = 1; i <= 3; i++) {
-            actions.moveToElement(driver.findElement(By.cssSelector("div.figure:nth-of-type(" + i + ")"))).pause(1000).perform();
-            userName.add(String.valueOf(driver.findElement(By.xpath("(//h5)[" + i + "]")).getText()));
+        for (WebElement figure : figures) {
+            actions.moveToElement(figure).pause(1000).perform();
+            System.out.println(figure.findElement(By.tagName("h5")).getText().replaceAll("name: ", ""));
         }
-        System.out.println("User names are " + userName);
     }
 }
+
+
+
 
 
 
