@@ -18,21 +18,20 @@ public class ChallengingDomPage extends BasePage {
     private List<WebElement> numbers;
 
 
-    public ChallengingDomPage(WebDriver driver) {
-        super(driver);
+    public ChallengingDomPage() {
         PageFactory.initElements(driver, this);
     }
     public ChallengingDomPage clickFirstButton(){
         clickButton(firstButton);
-        return new ChallengingDomPage(driver);
+        return new ChallengingDomPage();
     }
     public ChallengingDomPage clickSecondButton(){
         clickButton(secondButton);
-        return new ChallengingDomPage(driver);
+        return new ChallengingDomPage();
     }
     public ChallengingDomPage clickThirdButton(){
         clickButton(thirdButton);
-        return new ChallengingDomPage(driver);
+        return new ChallengingDomPage();
     }
     public void showСolumn(){
         for (WebElement number : numbers) {

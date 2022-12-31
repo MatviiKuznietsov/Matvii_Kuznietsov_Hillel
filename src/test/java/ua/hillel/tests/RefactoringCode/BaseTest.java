@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import ua.hillel.tests.utils.DriverHolder;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -14,7 +15,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
         driver.manage().window().maximize();
-
+        DriverHolder.setDriver(driver);
     }
 
     @AfterClass(alwaysRun = true)
@@ -26,6 +27,6 @@ public class BaseTest {
 
     public MainPage openMainPage() {
         driver.get("https://the-internet.herokuapp.com");
-        return new MainPage(driver);
+        return new MainPage();
     }
 }

@@ -11,8 +11,7 @@ public class CheckboxesPage extends BasePage{
     @FindBy (id = "checkboxes")
     List<WebElement> boxes;
 
-    public CheckboxesPage (WebDriver driver){
-        super(driver);
+    public CheckboxesPage (){
         PageFactory.initElements(driver, this);
     }
     public void checkboxesStatus (){

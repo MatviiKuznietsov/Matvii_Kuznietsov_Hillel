@@ -16,29 +16,28 @@ public class MainPage extends BasePage {
     @FindBy(linkText = "Hovers")
     private WebElement hovers;
 
-    public MainPage(WebDriver driver) {
-        super(driver);
+    public MainPage() {
         PageFactory.initElements(driver, this);
     }
 
     public ChallengingDomPage goChallengingDOM() {
         clickButton(challengingDOM);
-        return new ChallengingDomPage(driver);
+        return new ChallengingDomPage();
     }
 
     public LogInPage goToLogInPage() {
         clickButton(formAuthentication);
-        return new LogInPage(driver);
+        return new LogInPage();
     }
 
     public CheckboxesPage goToCheckboxes() {
         clickButton(checkboxes);
-        return new CheckboxesPage(driver);
+        return new CheckboxesPage();
     }
 
     public HowersPage goToHowers() {
         clickButton(hovers);
-        return new HowersPage(driver);
+        return new HowersPage();
     }
 
 }

@@ -17,8 +17,7 @@ public class LogInPage extends BasePage {
     @FindBy(css = ".flash.error")
     private WebElement signRejection;
 
-    public LogInPage(WebDriver driver) {
-        super(driver);
+    public LogInPage() {
         PageFactory.initElements(driver, this);
     }
 
@@ -32,7 +31,7 @@ public class LogInPage extends BasePage {
 
     public SecureAreaPage clickLoginButton() {
         radius.click();
-        return new SecureAreaPage(driver);
+        return new SecureAreaPage();
     }
 
     public SecureAreaPage loginValid(String username, String password) {
@@ -45,7 +44,7 @@ public class LogInPage extends BasePage {
         setUsername(username);
         setPassword(password);
         clickButton(radius);
-        return new LogInPage(driver);
+        return new LogInPage();
     }
 
     public WebElement getInvalidSign() {

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import ua.hillel.tests.utils.DriverHolder;
 
 import java.time.Duration;
 
@@ -19,8 +20,8 @@ abstract class BasePage {
     protected Actions actions;
     protected JavascriptExecutor javascriptExecutor;
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
+    public BasePage() {
+        this.driver = DriverHolder.getDriver();
         this.actions = new Actions(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         javascriptExecutor = (JavascriptExecutor) driver;

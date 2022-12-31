@@ -12,8 +12,7 @@ public class HowersPage extends BasePage {
     @FindBy(css = "div.figure")
     private List<WebElement> figures;
 
-    public HowersPage(WebDriver driver) {
-        super(driver);
+    public HowersPage() {
         PageFactory.initElements(driver, this);
     }
 
