@@ -48,7 +48,7 @@ public class LogInPage extends BasePage {
         return new LogInPage(driver);
     }
 
-    public void signChekingInvalid() {
-        Assert.assertEquals(signRejection.getText(), "Your username is invalid!\n" + "×");
+    public WebElement getInvalidSign() {
+        return signRejection;
     }
 }

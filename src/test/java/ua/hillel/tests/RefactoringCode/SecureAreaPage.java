@@ -25,7 +25,7 @@ public class SecureAreaPage  extends BasePage{
     public String getLoginStatus(){
         return loginStatus.getText();
     }
-    public void signCheking (){
-        Assert.assertEquals(sign.getText(),"You logged into a secure area!\n" + "×");
+    public WebElement getValidSign (){
+        return  sign;
     }
 }
