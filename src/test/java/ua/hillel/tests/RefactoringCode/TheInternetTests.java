@@ -13,17 +13,18 @@ public class TheInternetTests extends BaseTest {
 
     @Test
     public void LogInValidTest() {
-        Assert.assertEquals(openMainPage()
+        String signValid = openMainPage()
                 .goToLogInPage()
                 .loginValid("tomsmith", "SuperSecretPassword!")
-                .getValidSign().getText(),"You logged into a secure area!\n" + "×");
-
+                .getValidSign();
+        Assert.assertEquals(signValid, "You logged into a secure area!\n" + "×");
     }
 
     @Test
     public void testLogInInvalid() {
-        Assert.assertEquals(openMainPage().goToLogInPage().loginInvalid("NoNameUser", "SMB_Password")
-                .getInvalidSign().getText(), "Your username is invalid!\n" + "×");
+        String signInvalid = openMainPage().goToLogInPage().loginInvalid("NoNameUser", "SMB_Password")
+                .getInvalidSign();
+        Assert.assertEquals(signInvalid, "Your username is invalid!\n" + "×");
     }
 
     @Test
