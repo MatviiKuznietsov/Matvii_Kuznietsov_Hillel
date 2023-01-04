@@ -47,7 +47,7 @@ public class LogInPage extends BasePage {
         return new LogInPage();
     }
 
-    public WebElement getInvalidSign() {
-        return signRejection;
+    public String getInvalidSign() {
+        return signRejection.getText();
     }
 }
