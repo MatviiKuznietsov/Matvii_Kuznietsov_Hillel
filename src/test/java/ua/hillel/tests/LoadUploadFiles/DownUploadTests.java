@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 public class DownUploadTests extends BaseTest {
-    public String nameFile = "Html details.txt";
+    public String nameFile = "ismail.txt";
     public String pathToFile = "target/download/";
 
     @Test
@@ -23,7 +23,7 @@ public class DownUploadTests extends BaseTest {
     @Test
     public void upLoadtest() throws InterruptedException, IOException {
         writeToFile();
-        openMainPage().gofileUpload().setArrivedFile("target/download/" + nameFile).clickUploadButton();
+        openMainPage().gofileUpload().setArrivedFile(new File(pathToFile + nameFile)).clickUploadButton();
         Thread.sleep(2000);
 
     }

@@ -20,8 +20,8 @@ public class UploadPage extends BasePage{
     public void clickBrowseButton(){
         clickButton(browseButton);
     }
-    public UploadPage setArrivedFile(String pathFile){
-        browseButton.sendKeys((new File(pathFile).getAbsolutePath()));
+    public UploadPage setArrivedFile(File pathFile){
+        browseButton.sendKeys((pathFile.getAbsolutePath()));
         return new UploadPage();
     }
     public void clickUploadButton(){
