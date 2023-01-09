@@ -13,6 +13,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <TestNGVersion>7.6.1</TestNGVersion>
+        <selenide.version>6.11.0</selenide.version>
     </properties>
 
     <dependencies>
@@ -34,6 +35,14 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.1</version>
         </dependency>
+
+        <!-- SELENIDE -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+
 
     </dependencies>
 

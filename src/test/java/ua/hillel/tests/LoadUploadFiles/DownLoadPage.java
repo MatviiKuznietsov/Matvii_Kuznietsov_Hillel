@@ -11,6 +11,7 @@ public class DownLoadPage extends BasePage{
         PageFactory.initElements(driver, this);
     }
     public void clickObject (String nameDownLoadObject){
+
         WebElement sign =driver.findElement(By.linkText(nameDownLoadObject));
         clickButton(sign);
     }
