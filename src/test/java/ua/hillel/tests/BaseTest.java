@@ -5,9 +5,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
+import ua.hillel.tests.listeners.CustomExtentReportListener;
+
+@Listeners(CustomExtentReportListener.class)
 
 public class BaseTest {
+    static {
+        System.setProperty("extent.reporter.html.start", "true");
+        System.setProperty("extent.reporter.html.out", "target/extentReport/Extent.Html");
+    }
+
     WebDriver driver = new ChromeDriver();
+
     @BeforeTest
     public void Preparation() {
         WebDriverManager.chromedriver().setup();
