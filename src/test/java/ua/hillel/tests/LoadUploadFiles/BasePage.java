@@ -6,11 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Listeners;
+import ua.hillel.tests.listeners.CustomExtentReportListener;
 import ua.hillel.tests.utils.DriverHolder;
 
 import java.time.Duration;
 
+
 abstract class BasePage {
+
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;

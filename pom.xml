@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <TestNGVersion>7.6.1</TestNGVersion>
         <selenide.version>6.11.0</selenide.version>
+        <extentReport.version>1.0.7</extentReport.version>
         <OkHttp.version>4.10.0</OkHttp.version>
         <JSON.version>20220924</JSON.version>
         <GSON.version>2.10.1</GSON.version>
@@ -46,6 +47,13 @@
             <artifactId>selenide</artifactId>
             <version>${selenide.version}</version>
         </dependency>
+        <!-- REPORT -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports-testng-adapter</artifactId>
+            <version>${extentReport.version}</version>
+        </dependency>
+
         <!-- OkHttp -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
@@ -71,8 +79,6 @@
             <version>${LOMBOK.version}</version>
             <scope>provided</scope>
         </dependency>
-
-
     </dependencies>
 
 

@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 public class DownUploadTests extends BaseTest {
-    public String nameFile = "ismail.txt";
+    public String nameFile = "test.txt";
     public String pathToFile = "target/download/";
 
     @Test
